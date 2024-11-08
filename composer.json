@@ -10,5 +10,20 @@
         "psr-4": {
             "LonelyWalkerSource\\LaravelFilesystemOss\\": "src"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LonelyWalkerSource\\LaravelFilesystemOss\\OssStorageServiceProvider"
+            ]
+        },
+        "hooks": {
+            "pre-commit": [
+                "composer check-style"
+            ],
+            "pre-push": [
+                "composer check-style"
+            ]
+        }
     }
 }
