@@ -1,0 +1,14 @@
+{
+    "name": "lonelywalkersource\/laravel-filesystem-oss",
+    "description": "Package description here.",
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "^9.0|^10.0|^11.0",
+        "lonelywalkersource/filesystem-oss": "^1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LonelyWalkerSource\\LaravelFilesystemOss\\": "src"
+        }
+    }
+}
