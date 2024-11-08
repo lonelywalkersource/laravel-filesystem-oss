@@ -6,7 +6,7 @@ use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use League\Flysystem\Filesystem;
-use LonelyWalkerSource\FilesystemOss\OssAdapterr;
+use LonelyWalkerSource\FilesystemOss\OssAdapter;
 use OSS\OssClient;
 
 class OssStorageServiceProvider extends ServiceProvider
@@ -32,7 +32,7 @@ class OssStorageServiceProvider extends ServiceProvider
             }
 
             $client = new OssClient($accessId, $accessKey, $epInternal, $isCname);
-            $adapter = new OssAdapterr($client, $bucket, $endPoint, $ssl, $isCname, $debug, $cdnDomain);
+            $adapter = new OssAdapter($client, $bucket, $endPoint, $ssl, $isCname, $debug, $cdnDomain);
 
             return new FilesystemAdapter(new Filesystem($adapter), $adapter, $config);
         });
