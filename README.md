@@ -38,7 +38,7 @@ return [
             'ssl' => false, // true to use 'https://' and false to use 'http://'. default is false,
             'is_cname' => false, // 是否使用自定义域名,true: 则Storage.url()会使用自定义的cdn或域名生成文件url， false: 则使用外部节点生成url
             'debug' => false,
-            'prefix' => env('OSS_PREFIX','')
+            'upload_prefix' => env('OSS_UPLOAD_PREFIX','')
         ],
         //...
     ]
