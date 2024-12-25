@@ -26,13 +26,14 @@ class OssStorageServiceProvider extends ServiceProvider
 
             $endPoint = $config['endpoint']; // 默认作为外部节点
             $epInternal = $isCname ? $cdnDomain : (empty($config['endpoint_internal']) ? $endPoint : $config['endpoint_internal']); // 内部节点
+            $prefix = isset($config['prefix']) && $config['prefix'] ? $config['prefix'] : '';
 
             if ($debug) {
                 Log::debug('OSS config:', $config);
             }
 
             $client = new OssClient($accessId, $accessKey, $epInternal, $isCname);
-            $adapter = new OssAdapter($client, $bucket, $endPoint, $ssl, $isCname, $debug, $cdnDomain);
+            $adapter = new OssAdapter($client, $bucket, $endPoint, $ssl, $isCname, $debug, $cdnDomain, $prefix);
 
             return new FilesystemAdapter(new Filesystem($adapter), $adapter, $config);
         });
