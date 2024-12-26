@@ -35,8 +35,8 @@ return [
             'bucket' => env('OSS_BUCKET'),
             'endpoint' => env('OSS_ENDPOINT'), // OSS 外网节点或自定义外部域名
             'cnd_domain' => env('OSS_CDN_DOMAIN'), // 如果isCName为true, getUrl会判断cdnDomain是否设定来决定返回的url，如果cdnDomain未设置，则使用endpoint来生成url，否则使用cdn
-            'ssl' => false, // true to use 'https://' and false to use 'http://'. default is false,
-            'is_cname' => false, // 是否使用自定义域名,true: 则Storage.url()会使用自定义的cdn或域名生成文件url， false: 则使用外部节点生成url
+            'ssl' => env('OSS_SSL',false), // true to use 'https://' and false to use 'http://'. default is false,
+            'is_cname' => env('OSS_IS_CNAME',false), // 是否使用自定义域名,true: 则Storage.url()会使用自定义的cdn或域名生成文件url， false: 则使用外部节点生成url
             'debug' => false,
             'upload_prefix' => env('OSS_UPLOAD_PREFIX','')
         ],
