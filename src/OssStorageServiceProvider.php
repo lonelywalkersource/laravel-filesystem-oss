@@ -18,7 +18,7 @@ class OssStorageServiceProvider extends ServiceProvider
             $accessId = $config['access_key'];
             $accessKey = $config['secret_key'];
 
-            $cdnDomain = empty($config['cnd_domain']) ? '' : $config['cnd_domain'];
+            $cdnDomain = empty($config['cdn_domain']) ? '' : $config['cdn_domain'];
             $bucket = $config['bucket'];
             $ssl = empty($config['ssl']) ? false : $config['ssl'];
             $isCname = empty($config['is_cname']) ? false : $config['is_cname'];
