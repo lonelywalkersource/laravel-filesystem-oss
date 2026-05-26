@@ -1,0 +1,5 @@
+/vendor/
+/.pest.cache/
+/composer.lock
+/.idea/
+.env

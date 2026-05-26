@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pest bootstrap="vendor/autoload.php"
+      cacheDirectory=".pest.cache"
+      executionOrder="random"
+      beStrictAboutOutputDuringTests="true"
+      failOnRisky="true"
+      failOnWarning="true"
+      displayDetailsOnTestsThatTriggerWarnings="true"
+      displayDetailsOnTestsThatTriggerErrors="true"
+      displayDetailsOnTestsThatTriggerDeprecations="true"
+      displayDetailsOnTestsThatTriggerNotices="true"
+      colors="true">
+    <testsuites>
+        <testsuite name="default">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </source>
+    <php>
+        <env name="APP_KEY" value="base64:2fl+Ktvkfl+Fuz4Qp/A75G2RTiWVA/ZoKZvp6fiiM10="/>
+    </php>
+</pest>
